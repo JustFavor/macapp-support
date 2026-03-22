@@ -7,13 +7,17 @@
 
 :root {
     --primary-color: #007AFF;
+    --primary-dark: #0051D5;
     --text-color: #333;
     --text-light: #666;
     --bg-color: #f5f5f7;
     --white: #ffffff;
     --border-color: #e0e0e0;
     --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
     --transition: all 0.3s ease;
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-blue: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
 }
 
 body {
@@ -51,6 +55,11 @@ nav {
     color: var(--primary-color);
 }
 
+.logo a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -79,9 +88,9 @@ nav {
 
 /* Hero区域 */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color), #0051D5);
+    background: var(--gradient-blue);
     color: var(--white);
-    padding: 6rem 20px;
+    padding: 5rem 20px;
     text-align: center;
 }
 
@@ -93,9 +102,15 @@ nav {
 
 .tagline {
     font-size: 1.25rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
+    margin-bottom: 1rem;
+    opacity: 0.95;
     animation: fadeInUp 0.8s ease 0.2s backwards;
+}
+
+.chip-support {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    animation: fadeInUp 0.8s ease 0.3s backwards;
 }
 
 .cta-button {
@@ -108,11 +123,229 @@ nav {
     font-weight: 600;
     transition: var(--transition);
     animation: fadeInUp 0.8s ease 0.4s backwards;
+    margin-top: 1rem;
 }
 
 .cta-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 应用展示区域 */
+.apps-section {
+    padding: 5rem 20px;
+    background-color: var(--bg-color);
+}
+
+.apps-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.app-card {
+    background-color: var(--white);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.app-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.app-card.coming-soon {
+    opacity: 0.8;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.app-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.app-badge.free {
+    background-color: #10b981;
+    color: white;
+}
+
+.app-badge.new {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.app-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.app-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.app-tagline {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.app-desc {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+.app-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-tag {
+    background-color: var(--bg-color);
+    color: var(--text-light);
+    padding: 0.35rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+.app-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.app-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.app-link:hover {
+    text-decoration: underline;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--text-color);
+    color: var(--white);
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.download-btn:hover {
+    background-color: #000;
+    transform: translateY(-2px);
+}
+
+.download-icon {
+    font-size: 1rem;
+}
+
+/* 关于区域 */
+.about {
+    padding: 5rem 20px;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.about > .container > p {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-item {
+    text-align: center;
+}
+
+.about-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.about-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-item p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* 应用详情页 */
+.app-hero {
+    background: var(--gradient-blue);
+    color: var(--white);
+    padding: 4rem 20px;
+}
+
+.app-hero-content {
+    text-align: center;
+}
+
+.app-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.app-hero .app-tagline {
+    font-size: 1.25rem;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 0.5rem;
+}
+
+.app-hero .chip-support {
+    font-size: 0.9rem;
+    opacity: 0.85;
+    margin-bottom: 2rem;
+}
+
+.app-hero-actions {
+    margin-top: 1.5rem;
 }
 
 /* 功能区域 */
@@ -144,7 +377,7 @@ nav {
 
 .feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-hover);
 }
 
 .feature-icon {
@@ -161,23 +394,64 @@ nav {
     color: var(--text-light);
 }
 
-/* 关于区域 */
-.about {
+/* 应用关于区域 */
+.app-about {
     padding: 5rem 20px;
     text-align: center;
 }
 
-.about h2 {
+.app-about h2 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
 }
 
-.about p {
+.app-about > .container > p {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
     font-size: 1.1rem;
     color: var(--text-light);
     line-height: 1.8;
+}
+
+.highlight-box {
+    background-color: var(--bg-color);
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.highlight-box h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.highlight-box ul {
+    list-style: none;
+}
+
+.highlight-box li {
+    padding: 0.5rem 0;
+    color: var(--text-color);
+}
+
+/* 下载区域 */
+.download-section {
+    padding: 4rem 20px;
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+.download-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.download-section p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
 }
 
 /* 法律内容页面 */
@@ -408,16 +682,20 @@ footer p {
         display: block;
     }
 
-    .hero h1 {
+    .hero h1,
+    .app-hero h1 {
         font-size: 2rem;
     }
 
-    .tagline {
+    .tagline,
+    .app-hero .app-tagline {
         font-size: 1rem;
     }
 
+    .apps-section h2,
     .features h2,
     .about h2,
+    .app-about h2,
     .support-page h1 {
         font-size: 2rem;
     }
@@ -430,18 +708,37 @@ footer p {
         flex-direction: column;
         gap: 1rem;
     }
+
+    .apps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .app-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .download-btn {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
-    .hero {
-        padding: 4rem 20px;
+    .hero,
+    .app-hero {
+        padding: 3rem 20px;
     }
 
-    .hero h1 {
+    .hero h1,
+    .app-hero h1 {
         font-size: 1.75rem;
     }
 
     .cta-button {
         padding: 0.875rem 2rem;
+    }
+
+    .app-card {
+        padding: 1.5rem;
     }
 }
