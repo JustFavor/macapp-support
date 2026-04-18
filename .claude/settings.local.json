@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp /Users/mac/Work/workspace/CleanApps/CleanApps/Assets.xcassets/AppIcon.appiconset/icon-512.png /Users/mac/Work/workspace/macapp-support/images/cleanapps-icon-512.png)",
+      "Bash(cp /Users/mac/Work/workspace/CleanApps/CleanApps/Assets.xcassets/AppIcon.appiconset/icon-32@2x.png /Users/mac/Work/workspace/macapp-support/images/cleanapps-icon.png)"
+    ]
+  }
+}

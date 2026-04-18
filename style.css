@@ -450,6 +450,9 @@ nav {
 .app-card-content {
     position: relative;
     padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .app-card-placeholder {
@@ -551,6 +554,7 @@ nav {
 .app-actions {
     display: flex;
     gap: var(--spacing-md);
+    margin-top: auto;
 }
 
 .app-actions .btn {
