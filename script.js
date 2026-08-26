@@ -1,50 +1,26 @@
-// 移动端菜单切换
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (mobileMenuBtn && navLinks) {
-        mobileMenuBtn.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
+document.addEventListener('DOMContentLoaded', () => {
+    const button = document.querySelector('.mobile-menu-btn');
+    const navigation = document.querySelector('.nav-links');
+    const close = () => {
+        if (!button || !navigation) return;
+        navigation.classList.remove('active');
+        button.setAttribute('aria-expanded', 'false');
+    };
+    if (button && navigation) {
+        button.setAttribute('aria-expanded', 'false');
+        button.setAttribute('aria-controls', 'primary-navigation');
+        navigation.id = 'primary-navigation';
+        button.addEventListener('click', () => {
+            const open = navigation.classList.toggle('active');
+            button.setAttribute('aria-expanded', String(open));
         });
-
-        // 点击链接后关闭菜单
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
+        navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
+        document.addEventListener('keydown', event => { if (event.key === 'Escape') close(); });
     }
-
-    // 平滑滚动
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href !== '#') {
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }
-        });
-    });
-
-    // 添加滚动时的导航栏阴影效果
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('header');
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 50) {
-            header.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.15)';
-        } else {
-            header.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
-        }
-        
-        lastScroll = currentScroll;
-    });
+    const header = document.querySelector('header');
+    if (header) {
+        const update = () => { header.style.boxShadow = window.scrollY > 12 ? '0 1px 18px rgba(0,0,0,.06)' : 'none'; };
+        update();
+        window.addEventListener('scroll', update, { passive: true });
+    }
 });
