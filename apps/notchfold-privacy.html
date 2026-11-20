@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>屏檐（NotchFold）隐私政策</title>
+    <meta name="description" content="了解屏檐 Mac App Store 版如何处理文件、音乐封面、日历、摄像头和支持请求。">
+    <link rel="icon" href="../images/notchfold-icon.png">
+    <link rel="alternate" hreflang="zh-Hans" href="https://justfavor.github.io/macapp-support/apps/notchfold-privacy.html">
+    <link rel="alternate" hreflang="en" href="https://justfavor.github.io/macapp-support/apps/notchfold-privacy-en.html">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo"><a href="../index.html">App Support</a></div>
+            <ul class="nav-links">
+                <li><a href="notchfold.html">技术支持</a></li>
+                <li><a href="notchfold-privacy.html">隐私政策</a></li>
+                <li><a href="notchfold-privacy-en.html" lang="en" hreflang="en">English</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="打开导航菜单"><span></span><span></span></button>
+        </nav>
+    </header>
+    <main>
+        <article class="legal-content">
+            <div class="container">
+                <h1>屏檐隐私政策</h1>
+                <p class="last-updated"><time datetime="2026-11-20">生效日期：2026 年 11 月 20 日</time></p>
+                <p>本政策适用于 Mac App Store 版屏檐（NotchFold）。使用屏檐无需注册账号。应用在 Mac 上处理面板内容，不含广告或第三方行为分析 SDK。</p>
+                <section>
+                    <h2>音乐播放与专辑封面</h2>
+                    <p>授权后，屏檐从 Apple Music 或 Spotify 读取曲名、艺人、专辑、封面、时长和播放位置，用于展示曲目及响应播放控制。你导入的 LRC 歌词保存在本机。</p>
+                    <p>当播放器未提供封面网址时，屏檐会将<strong>曲名和艺人名</strong>发送到 Apple 的 iTunes 搜索服务，并在本机用专辑等信息匹配结果。显示远程封面时，Mac 还会向提供图片的服务器请求封面。接收请求的服务可以看到设备的 IP 地址。这些请求直接发往相应服务。<a href="https://www.apple.com/legal/privacy/">Apple 隐私政策</a></p>
+                </section>
+                <section>
+                    <h2>文件暂存、笔记与应用启动台</h2>
+                    <p>拖入文件时，屏檐在本机保存副本、文件索引和预览。手动或自动移出后，副本和移出记录仍可能留在本机以供撤销。使用隔空投送或系统分享时，macOS 将所选文件交给你指定的接收人或服务。</p>
+                    <p>笔记、组件布局、收藏和偏好保存在本机。启动台在启用的目录中读取应用名称和图标。添加来源文件夹时，屏檐保存只读访问书签，以便下次启动时继续访问。</p>
+                </section>
+                <section>
+                    <h2>日历和摄像头</h2>
+                    <p>日历卡片在你授权后读取所选日期的事件标题、时间和日历名称，并在本机显示。镜子卡片使用摄像头做实时预览，不录制或上传画面。</p>
+                </section>
+                <section>
+                    <h2>管理权限与删除数据</h2>
+                    <p>在 macOS「系统设置 → 隐私与安全性」中，可随时撤销自动化、日历或摄像头权限。可在启动台的应用来源里移除自选目录，在笔记编辑器删除笔记，或在音乐卡片的歌词菜单中移除已导入的歌词。</p>
+                    <p>如需彻底清除商店版的本地数据，请先备份仍需保留的文件，退出屏檐，再在访达中移除其沙盒容器 <code>~/Library/Containers/com.XJ.NotchFold</code>。该操作会一并删除容器内的暂存副本、撤销记录和设置。</p>
+                </section>
+                <section>
+                    <h2>支持与隐私联系</h2>
+                    <p>如有隐私问题或希望删除此前发给我们的支持资料，请发邮件至 <a href="mailto:justfat.gh@gmail.com">justfat.gh@gmail.com</a>。联系支持时，我们会收到你主动提供的邮箱、问题描述或附件，用于处理该请求。<a href="https://github.com/JustFavor/macapp-support/issues">GitHub Issues</a> 上的公开反馈可被他人查看，请将含有私人信息的问题通过邮件发送。</p>
+                    <p>本页托管在 GitHub Pages。访问网页时，GitHub 会为安全目的记录访问者的 IP 地址。<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub 隐私声明</a> · <a href="notchfold.html">屏檐技术支持</a></p>
+                </section>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-links"><a href="notchfold.html">技术支持</a><a href="notchfold-privacy.html">隐私政策</a><a href="notchfold-privacy-en.html" lang="en" hreflang="en">English</a></div>
+            <p>&copy; 2026 App Support.</p>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>
