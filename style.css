@@ -14,3 +14,29 @@ header{position:fixed;inset:0 0 auto;z-index:1000;background:var(--glass);border
 @media(max-width:900px){.features-grid,.feature-grid{grid-template-columns:repeat(2,1fr)}.support-grid{grid-template-columns:1fr}}
 @media(max-width:700px){.container{width:min(100% - 32px,1120px)}nav.container{width:calc(100% - 24px)}.nav-links{display:none;position:absolute;inset:52px 0 auto;padding:22px 28px 28px;flex-direction:column;align-items:flex-start;gap:18px;background:rgba(250,250,252,.98);border-bottom:1px solid var(--line);box-shadow:0 18px 30px rgba(0,0,0,.06)}.nav-links.active{display:flex}.nav-links a{font-size:1rem}.mobile-menu-btn{display:block}.hero{min-height:690px;padding-top:120px}.hero h1{font-size:clamp(3rem,15vw,5rem)}.hero-features{flex-direction:column;gap:8px}.apps-grid,.features-grid,.feature-grid{grid-template-columns:1fr}.app-card-placeholder{grid-column:auto}.app-card{min-height:470px}.app-card-content{padding:28px}.footer-content{grid-template-columns:1fr;gap:32px}.footer-links{gap:34px}.highlight-box ul{grid-template-columns:1fr}.info-item{flex-direction:column;gap:3px}.app-hero h1{font-size:clamp(3.5rem,18vw,6rem)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+.download-channels {
+    width: 100%;
+    text-align: left;
+    font-size: 0.9375rem;
+}
+.download-channels > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.125rem 0.75rem;
+    padding-block: 0.625rem;
+    border-bottom: 1px solid var(--line);
+}
+.download-channels dt { font-weight: 600; }
+.download-channels dd { margin-left: auto; color: #515154; }
+.download-channels a {
+    color: #005ebc;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+}
+.app-card .download-channels { margin-top: auto; }
+.download-channels + .app-actions { flex-wrap: wrap; margin-top: 0.75rem; }
+.app-hero .download-channels { max-width: 26rem; margin-inline: auto; }
+.legal-content .download-channels { max-width: 32rem; margin-bottom: 1rem; }
